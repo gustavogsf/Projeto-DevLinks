@@ -6,9 +6,10 @@
 
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
-  --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.05);
+  --bg-color: #121214;
+  --button-color: #29292E;
+  --surface-color: #202024;
+  --border-color: #4863F7;
   --surface-color-hover: rgba(255, 255, 255, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon.svg);
@@ -16,8 +17,8 @@
 
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
-  --stroke-color: rgba(0, 0, 0, 0.5);
+  --bg-color: url(./assets/bg-mobile-light.jpg);
+  --button-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
@@ -33,7 +34,7 @@ body {
   */
 
   /* background: color image repeat position/size */
-  background: var(--bg-url) no-repeat top center/cover;
+  background: var(--bg-color) no-repeat top center/cover;
   height: 100vh;
 }
 
@@ -44,9 +45,11 @@ body * {
 
 #container {
   width: 100%;
-  max-width: 588px;
-  padding: 0 24px;
-  margin: 56px auto 0px;
+  max-width: 450px;
+  padding: 24px 24px;
+  margin: 56px auto;
+  background-color: var(--surface-color);
+  border-radius: 8px;
 
   /* 
   margin:
@@ -115,7 +118,7 @@ body * {
   width: 64px;
   height: 24px;
   background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
@@ -138,24 +141,33 @@ ul li a {
   justify-content: center;
 
   padding: 16px 24px;
-
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  border-radius: 8px;
-
+  
+  border: 2px solid #12121400;
+  background: var(--button-color);
+  border-radius: 5px;
+  
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-
+  
   text-decoration: none;
   font-weight: 500;
-
+  
   transition: background 0.2s;
 }
 
 /* pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
-  border: 1.5px solid var(--text-color);
+  border: 2px solid var(--border-color);
+}
+
+/* hr */
+hr {
+  display: block;
+  margin: 48px auto 24px;
+  border-style: inset;
+  border-width: 0.5px;
+  border-color: var(--button-color);
 }
 
 /* social links */
@@ -188,14 +200,18 @@ footer {
   font-size: 14px;
 }
 
+footer a {
+  color: var(--border-color);
+}
+
 /* media queries */
 @media (min-width: 700px) {
   :root {
-    --bg-url: url(./assets/bg-desktop.jpg);
+    --bg-color: #121214;
   }
 
   .light {
-    --bg-url: url(./assets/bg-desktop-light.jpg);
+    --bg-color: url(./assets/bg-desktop-light.jpg);
   }
 }
 
@@ -215,4 +231,8 @@ footer {
   to {
     left: 0;
   }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
