@@ -9,20 +9,21 @@
   --bg-color: #121214;
   --button-color: #29292E;
   --surface-color: #202024;
-  --border-color: #4863F7;
   --surface-color-hover: rgba(255, 255, 255, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon.svg);
+  --details-color: #FFA940;
 }
 
 .light {
   --text-color: black;
-  --bg-color: url(./assets/bg-mobile-light.jpg);
-  --button-color: rgba(0, 0, 0, 0.5);
-  --surface-color: rgba(0, 0, 0, 0.05);
+  --bg-color: #f2f2f2;
+  --button-color: #5e5e5e54;
+  --surface-color: rgba(0, 0, 0, 0.137);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
+  --details-color: #4863F7;
 }
 
 body {
@@ -80,6 +81,12 @@ body * {
   margin-top: 8px;
 }
 
+.title {
+  margin-bottom: 30px;
+  font-size: 12px;
+  color: var(--details-color);
+}
+
 /* Switch */
 #switch {
   position: relative;
@@ -118,7 +125,7 @@ body * {
   width: 64px;
   height: 24px;
   background: var(--surface-color);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--details-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
@@ -133,6 +140,7 @@ ul {
   gap: 16px;
 
   padding: 24px 0;
+  margin-top: 70px;
 }
 
 ul li a {
@@ -153,21 +161,13 @@ ul li a {
   font-weight: 500;
   
   transition: background 0.2s;
+  transition: border 0.2s;
 }
 
 /* pseudo-selector */
 ul li a:hover {
   background: var(--surface-color-hover);
-  border: 2px solid var(--border-color);
-}
-
-/* hr */
-hr {
-  display: block;
-  margin: 48px auto 24px;
-  border-style: inset;
-  border-width: 0.5px;
-  border-color: var(--button-color);
+  border: 2px solid var(--details-color);
 }
 
 /* social links */
@@ -201,17 +201,18 @@ footer {
 }
 
 footer a {
-  color: var(--border-color);
+  color: var(--details-color);
 }
 
 /* media queries */
-@media (min-width: 700px) {
-  :root {
-    --bg-color: #121214;
-  }
-
-  .light {
-    --bg-color: url(./assets/bg-desktop-light.jpg);
+@media (max-width: 500px) {
+  #container {
+    width: 100%;
+    max-width: 350px;
+    padding: 24px 24px;
+    margin: 18px auto;
+    background-color: var(--surface-color);
+    border-radius: 8px;
   }
 }
 
