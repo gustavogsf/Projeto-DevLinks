@@ -140,7 +140,7 @@ ul {
   gap: 16px;
 
   padding: 24px 0;
-  margin-top: 70px;
+  /* margin-top: 70px; */
 }
 
 ul li a {
@@ -175,7 +175,7 @@ ul li a:hover {
   display: flex;
   justify-content: center;
 
-  padding: 24px 0;
+  /* padding: 24px 0; */
 
   font-size: 24px;
 }
@@ -210,7 +210,7 @@ footer a {
     width: 100%;
     max-width: 350px;
     padding: 24px 24px;
-    margin: 18px auto;
+    margin: 34px auto;
     background-color: var(--surface-color);
     border-radius: 8px;
   }
